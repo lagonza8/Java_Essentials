@@ -35,5 +35,6 @@ public class LetterSizeConversion {
                 "Diagonal length: " + diagonal);
 
         System.out.println("End of code.");
+
     }
 }
