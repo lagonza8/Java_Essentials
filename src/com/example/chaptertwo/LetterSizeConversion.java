@@ -13,5 +13,9 @@ public class LetterSizeConversion {
         Double lengthPaperInches = 11.0;
 
         showMessageDialog(null, "Dimensions in mm: " + widthPaperInches*mmPerInch + "mm by " + lengthPaperInches*mmPerInch + " mm.");
+
+        showMessageDialog(null, "Perimeter in mm: " + ((2*widthPaperInches*lengthPaperInches) + (2*lengthPaperInches*mmPerInch)));
+
+
     }
 }
