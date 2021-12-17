@@ -26,6 +26,22 @@ public class TwoIntegerComparison {
         JOptionPane.showMessageDialog(null,
                 "The smaller value is: " + (Math.min(value1, value2)));
 
+        System.out.printf("Sum: ");
+        System.out.printf(" ");
+        System.out.printf(" ");
+        System.out.printf(" ");
+        System.out.printf(" ");
+        System.out.printf(" ");
+        System.out.printf(" ");
 
+        /**
+         * Sum: 45
+         * Difference: -5
+         * Product: 500
+         * Average: 22.50
+         * Distance: 5
+         * Maximum: 25
+         * Minimum: 20
+         */
     }
 }
