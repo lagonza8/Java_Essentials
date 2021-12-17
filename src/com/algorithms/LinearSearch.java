@@ -31,6 +31,8 @@ public class LinearSearch {
         } else {
             System.out.println("Missing.");
         }
+        System.out.println("Thank you for playing.");
+
 
     }
 }
