@@ -118,5 +118,33 @@ public class Main {
         System.out.println(Arrays.deepToString(blank2x2));
         // uninitialized will be set to all zeros
 
+        int[][][] twoByTwox2 = new int[2][2][2];
+        System.out.println(Arrays.deepToString(twoByTwox2));
+        System.out.print("arr.length = ");
+        System.out.println(twoByTwox2.length);
+        System.out.print("arr[i].length = ");
+        System.out.println(twoByTwox2[0].length);
+        System.out.print("arr[i][j].length = ");
+        System.out.println(twoByTwox2[0][0].length);
+
+
+        int moduloInteger = 1776;
+        System.out.print("1776 % 10 returns the last digit in the value... ");
+        System.out.println(moduloInteger % 10);
+
+
+        System.out.print("1776 / 10 will truncate the last digit in the value... ");
+        System.out.println(moduloInteger / 10);
+
+
+        // Augmented or compound assign operators.
+        int xyz = 0;
+        xyz += 10; // xyz = 10
+        xyz *= 10; // xyz = 100
+        xyz -= 10; // xyz = 90
+        xyz /= 10; // xyz = 9
+
+        System.out.println(xyz);
+
     }
 }
