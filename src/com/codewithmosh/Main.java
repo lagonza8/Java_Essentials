@@ -105,5 +105,18 @@ public class Main {
         int[][][] numbers3 = new int[0][0][0];
         System.out.println(Arrays.deepToString(numbers3));
 
+        int[][] twoByTwo = new int[2][2];
+
+        for(int a = 0; a < twoByTwo.length; a++){
+            for (int b = 0; b < twoByTwo[a].length; b++) {
+                twoByTwo[a][b] = 0;
+            }
+        }
+        System.out.println(Arrays.deepToString(twoByTwo));
+
+        int[][] blank2x2= new int[2][2];
+        System.out.println(Arrays.deepToString(blank2x2));
+        // uninitialized will be set to all zeros
+
     }
 }
