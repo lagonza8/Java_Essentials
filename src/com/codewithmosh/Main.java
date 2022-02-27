@@ -334,6 +334,10 @@ public class Main {
         System.out.println(account.getBalance());
 
         /* Part 4 Abstraction */
+        var mailService = new MailService();
+        // send email is method that calls other methods encapsulated in that class
+
+        mailService.sendEmail(); // but as long as this method signature doesn't change
 
 
 
