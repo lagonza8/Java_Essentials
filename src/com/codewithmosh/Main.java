@@ -323,9 +323,22 @@ public class Main {
         /* The interface only has one simple method */
         calculator.calculateTax();
 
+        /* Part 3 Encapsulation */
+        var account = new Account();
+        //account.balance = -1;
+        //direct access to state of objects is bad bad bad
+
+        //we want indirect access only, we need to be explicit when we change states
+        account.deposit(10);
+        account.withdraw(5);
+        System.out.println(account.getBalance());
+
+        /* Part 4 Abstraction */
+
+
+
     }
-    /* Part 2.1 Not how it would be done, just a simple example */
-    /* Injection framewords needed for real interfaces*/
+    /* Part 2.1 */
     public static TaxCalculator getCalculator() {
         return new TaxCalculator2019();
     }
