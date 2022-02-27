@@ -1,5 +1,9 @@
 package com.codewithmosh;
 
+import com.codewithmosh.memento.Editor;
+import com.codewithmosh.memento.EditorState;
+import com.codewithmosh.memento.History;
+
 import java.awt.*;
 import java.text.NumberFormat;
 import java.util.Arrays;
@@ -355,6 +359,26 @@ public class Main {
         //The UIControl can take many forms, a checkbox, a textbox, a button, etc.
         drawUIControl(new CheckBox());
         drawUIControl(textBox);
+
+        /* Part 7 Memento Patter*/
+        var editor = new Editor();
+        var history = new History(); //when our state changes, we must record it
+
+        editor.setContent("a");
+        history.push(editor.createState());
+
+        editor.setContent("b");
+        history.push(editor.createState()); // save what you just changed
+
+        editor.setContent("c"); // here we made a mistake and want to go back to a previous state
+        // we need to pop from our history, that would give us our previous state
+        // retrieve and restore the state of our object
+        editor.restore(history.pop());
+        System.out.println(editor.getContent()); // should print "b", our previous state
+
+        editor.restore(history.pop());
+        System.out.println(editor.getContent()); // should print "a", our previous state
+
     }
     /* Part 2.1 */
     public static TaxCalculator getCalculator() {
