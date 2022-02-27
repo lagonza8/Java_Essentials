@@ -343,12 +343,28 @@ public class Main {
         /* Part 5 Inheritance */
         // TextBox, Button, CheckBox, etc... must inherit the following common behaviors
         // enable(), focus(), setPosition()
-
         var textBox = new TextBox();
+        //Every UIControl inherits the enable method, it was not a class method. we used keyword "extends"
         textBox.enable();
+        //The UIControl class need not be abstract
+
+        /* Part 6 Polymorphism */
+
+        //The UIControl class need's to be abstract in order for every class to have a draw() method with unique implementation
+        //The drawUIControl() method decouples our main method/Main class from the UIControl in its argument
+        //The UIControl can take many forms, a checkbox, a textbox, a button, etc.
+        drawUIControl(new CheckBox());
+        drawUIControl(textBox);
     }
     /* Part 2.1 */
     public static TaxCalculator getCalculator() {
         return new TaxCalculator2019();
+    }
+
+    /*Part 6.1 */
+    //Having this method helps our Main class/main method to not be dependent on the other classes in the project
+    public static void drawUIControl(UIControl control) {
+        control.draw();
+        //Because a UIControl can take many forms, draw() must be implemented by each UIControl
     }
 }
