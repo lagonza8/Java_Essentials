@@ -290,10 +290,8 @@ public class Main {
 //        String className = (income > 100_000) ? "First" : "Economy";
 //        System.out.println("You are in " + className + " class. Thank you for flying Mohegan Airlines.");
 
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
+        System.out.println("\n\n\n\n");
+
 
 
         /*A popular interview question*/
@@ -333,6 +331,8 @@ public class Main {
         account.withdraw(5);
         System.out.println(account.getBalance());
 
+        System.out.println("\n\n"); //three new lines total
+
         /* Part 4 Abstraction */
         var mailService = new MailService();
         // send email is method that calls other methods encapsulated in that class
@@ -340,7 +340,12 @@ public class Main {
         mailService.sendEmail(); // but as long as this method signature doesn't change
 
 
+        /* Part 5 Inheritance */
+        // TextBox, Button, CheckBox, etc... must inherit the following common behaviors
+        // enable(), focus(), setPosition()
 
+        var textBox = new TextBox();
+        textBox.enable();
     }
     /* Part 2.1 */
     public static TaxCalculator getCalculator() {
