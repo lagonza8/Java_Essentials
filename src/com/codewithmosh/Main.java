@@ -11,7 +11,7 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Hello world");
 
-        // byte data type is used when integer's may take up more memory when its not needed
+        // byte data type is used when integer's may take up more memory than what is needed
         byte byteAge = 30;          // byte values range from -128 - +127, appropriate for most age values
         short shortAge = 30;        // 2 bytes, range [-32K, 32K]
         int age = 30;               // int range: about [-2B, 2B]
@@ -23,7 +23,8 @@ public class Main {
          java interprets both values above as integer data types even though they were declared as "long" data type
          it's because they are still within the valid range of being a value represented by int data type
         */
-        long viewsCount3 = 3_123_456_789L; // valid, used to exceed int value ranges, modifier IS REQUIRED
+        long viewsCount3 = 3_123_456_789L;
+        // modifier IS REQUIRED once you assign a value that exceeds the value range for integer variables
 
         float price = 10.99F;
         // interpreted as a double without the format modifier and would give compilation error otherwise
@@ -38,25 +39,25 @@ public class Main {
         System.out.println("");
 
         /*while loops are good when we don't know ahead of time how many process repitions are required*/
-        Scanner repeatScanner = new Scanner(System.in);
-        String input = "";
-        while(true/*!input.equals("quit")*/){
-            System.out.print("Input: ");
-            input = repeatScanner.next().toLowerCase();
-            if (input.equals("pass"))
-                continue; /*move control to beginning of loop*/
-            if (input.equals("quit"))
-                break; /*jumps you out of the loop*/
-            /*every infinite loop must have a break statement/termination statement*/
-            System.out.println(input);
-        }
+//        Scanner repeatScanner = new Scanner(System.in);
+//        String input = "";
+//        while(true/*!input.equals("quit")*/){
+//            System.out.print("Input: ");
+//            input = repeatScanner.next().toLowerCase();
+//            if (input.equals("pass"))
+//                continue; /*move control to beginning of loop*/
+//            if (input.equals("quit"))
+//                break; /*jumps you out of the loop*/
+//            /*every infinite loop must have a break statement/termination statement*/
+//            System.out.println(input);
+//        }
 
         // This will be executed at least once, then condition is checked
-        do{
-            System.out.print("Input(do-while): ");
-            input = repeatScanner.next().toLowerCase();
-            System.out.println(input);
-        } while(!input.equals("quit"));
+//        do{
+//            System.out.print("Input(do-while): ");
+//            input = repeatScanner.next().toLowerCase();
+//            System.out.println(input);
+//        } while(!input.equals("quit"));
 
         System.out.println("");
         System.out.println("");
@@ -173,13 +174,22 @@ public class Main {
         */
 
         int[] numbers2 = {2, 3, 5, 1, 4};
+        System.out.print("length of {2, 3, 5, 1, 4} is: ");
         System.out.println(numbers2.length);
 
         Arrays.sort(numbers2); // will sort, but you still need to display it to confirm
+        System.out.print("sorting the array {2, 3, 5, 1, 4} results in: ");
         System.out.println(Arrays.toString(numbers2));
 
         int[][][] numbers3 = new int[0][0][0];
+        System.out.print("3-D array, all dimensions equal zero, int[0][0][0], results in: ");
         System.out.println(Arrays.deepToString(numbers3));
+        /* returns the string representation of the deep contents of the specified Object array. Unlike Arrays.toSt
+        ring(), if the array contains other arrays as elements, the string representation includes their contents, and
+        so on.
+        Source: Geeks To Geeks
+        URL: https://www.geeksforgeeks.org/difference-between-arrays-tostring-and-arrays-deeptostring-in-java/
+        */
 
         int[][] twoByTwo = new int[2][2];
 
@@ -236,16 +246,16 @@ public class Main {
         System.out.println("");
         System.out.println("");
 
-        Scanner ageScanner = new Scanner(System.in);
-        System.out.print("Age: ");
-        byte ageByte = ageScanner.nextByte();
-        System.out.println("You are " + ageByte);
+//        Scanner ageScanner = new Scanner(System.in);
+//        System.out.print("Age: ");
+//        byte ageByte = ageScanner.nextByte();
+//        System.out.println("You are " + ageByte);
 
         /*trim will delete white space before and after the main String*/
-        Scanner nameScanner = new Scanner(System.in);
-        System.out.println("Enter your name: ");
-        String name = nameScanner.nextLine().trim();
-        System.out.println("You are " + name);
+//        Scanner nameScanner = new Scanner(System.in);
+//        System.out.println("Enter your name: ");
+//        String name = nameScanner.nextLine().trim();
+//        System.out.println("You are " + name);
 
         System.out.println("");
         System.out.println("");
@@ -274,11 +284,11 @@ public class Main {
         System.out.println("");
         System.out.println("");
 
-        Scanner incomeScanner = new Scanner(System.in);
-        System.out.println("Enter your income rounded to nearest dollar amount: ");
-        int income = incomeScanner.nextInt();
-        String className = (income > 100_000) ? "First" : "Economy";
-        System.out.println("You are in " + className + " class. Thank you for flying Mohegan Airlines.");
+//        Scanner incomeScanner = new Scanner(System.in);
+//        System.out.println("Enter your income rounded to nearest dollar amount: ");
+//        int income = incomeScanner.nextInt();
+//        String className = (income > 100_000) ? "First" : "Economy";
+//        System.out.println("You are in " + className + " class. Thank you for flying Mohegan Airlines.");
 
         System.out.println("");
         System.out.println("");
@@ -287,21 +297,36 @@ public class Main {
 
 
         /*A popular interview question*/
-        Scanner valueScanner = new Scanner(System.in);
-        System.out.print("Enter an integer value :");
-        int valueEntered = valueScanner.nextInt();
-
-        if(((valueEntered % 5) == 0) && ((valueEntered % 3) == 0))
-            System.out.println("FizzBuzz");
-        else if((valueEntered % 5) == 0)
-            System.out.println("Fizz");
-        else if((valueEntered % 3) == 0)
-            System.out.println("Buzz");
-        else
-            System.out.println(valueEntered);
+//        Scanner valueScanner = new Scanner(System.in);
+//        System.out.print("Enter an integer value :");
+//        int valueEntered = valueScanner.nextInt();
+//
+//        if(((valueEntered % 5) == 0) && ((valueEntered % 3) == 0))
+//            System.out.println("FizzBuzz");
+//        else if((valueEntered % 5) == 0)
+//            System.out.println("Fizz");
+//        else if((valueEntered % 3) == 0)
+//            System.out.println("Buzz");
+//        else
+//            System.out.println(valueEntered);
 
         /*Don't Repeat Yourself (D.R.Y.), only when you have to.*/
 
 
+        /* Part 1 */
+        User user = new User("Luis", 31);
+        user.name = "Luis";
+        System.out.println(user.name);
+
+        /* Part 2 Programming to an interface */
+        TaxCalculator calculator = getCalculator(); //getCalc creates our loose coupling
+        /* The interface only has one simple method */
+        calculator.calculateTax();
+
+    }
+    /* Part 2.1 Not how it would be done, just a simple example */
+    /* Injection framewords needed for real interfaces*/
+    public static TaxCalculator getCalculator() {
+        return new TaxCalculator2019();
     }
 }
