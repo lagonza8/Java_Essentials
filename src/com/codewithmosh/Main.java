@@ -3,6 +3,7 @@ package com.codewithmosh;
 import com.codewithmosh.memento.Editor;
 import com.codewithmosh.memento.EditorState;
 import com.codewithmosh.memento.History;
+import com.codewithmosh.state.*;
 
 import java.awt.*;
 import java.text.NumberFormat;
@@ -378,6 +379,27 @@ public class Main {
 
         editor.restore(history.pop());
         System.out.println(editor.getContent()); // should print "a", our previous state
+
+        /* Part 8 State Pattern and the Open Closed Principle */
+        var canvas1 = new Canvas1();
+        // our original implementation where we passed an enum of type ToolType
+        canvas1.setCurrentTool(ToolType.SELECTION);
+        canvas1.mouseDown();
+        canvas1.mouseUp();
+
+        var canvas2 = new Canvas2();
+        // set the current tool to an object that implements the tool interface
+        canvas2.setCurrentTool(new SelectionTool()); // programming to an interface
+        canvas2.mouseDown();
+        canvas2.mouseUp();
+
+        canvas2.setCurrentTool(new BrushTool()); // programming to an interface
+        canvas2.mouseDown();
+        canvas2.mouseUp();
+
+        canvas2.setCurrentTool(new EraserTool()); // programming to an interface
+        canvas2.mouseDown();
+        canvas2.mouseUp();
 
     }
     /* Part 2.1 */
