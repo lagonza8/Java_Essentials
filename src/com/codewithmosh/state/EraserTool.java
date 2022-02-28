@@ -1,6 +1,9 @@
 package com.codewithmosh.state;
 
 public class EraserTool implements Tool{
+
+
+
     @Override
     public void mouseDown() {
         System.out.println("Eraser icon");
